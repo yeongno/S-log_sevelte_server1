@@ -1,6 +1,7 @@
 import db from '../lib/db.js'
 import { flattenArticleObject } from '../lib/articleHelper.js';
 import appMessages from '../lib/appMessages.js'
+import { getCurrentDate } from '../lib/timeHelper.js';
 
 const createComment = async (req, rep) => {
 
@@ -13,6 +14,7 @@ const createComment = async (req, rep) => {
     content: content,
     userId: userId,
     articleId: articleId,
+    createdAt: getCurrentDate()
   }
 
   try {
